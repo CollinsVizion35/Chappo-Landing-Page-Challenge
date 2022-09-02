@@ -1,0 +1,670 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: #0D0D2B;
+    color: #fff;
+    font-family: Oxanium,sans-serif;
+    transition: background-color .25s, color .25s;
+    background-repeat: no-repeat;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.c-btn {
+    background-color: #3B82F6;
+    color: #fff;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: .3em;
+    padding-bottom: .3em;
+    border-radius: 30px;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-bolder {
+    font-weight: bolder;
+}
+
+.slide-in {
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 1000ms ease-in-out,
+     transform 2000ms ease-in-out;
+}
+
+.slide-in.appear {
+    transform: translateX(0);
+    opacity: 1;
+    transition: opacity 1000ms ease-in-out,
+     transform 2000ms ease-in-out;
+}
+
+.slide-in-f {
+    transform: translateX(-300%);
+    opacity: 1;
+    transition: opacity 1000ms ease-in-out,
+     transform 2000ms ease-in-out;
+}
+
+.slide-in-f.appear {
+    transform: translateX(0);
+    opacity: 1;
+    transition: opacity 1000ms ease-in-out,
+     transform 2000ms ease-in-out;
+}
+
+.slide-up {
+    transform: translateY(50%);
+    opacity: 0;
+    transition: opacity 1000ms ease-in-out,
+     transform 2000ms ease-in-out;
+}
+
+.slide-up.appear {
+    transform: translateY(0);
+    opacity: 1;
+    transition: opacity 1000ms ease-in-out,
+     transform 2000ms ease-in-out;
+}
+
+.zoom-in {
+    transform: scale(0.2);
+    opacity: 0;
+    transition: opacity 1000ms ease-in-out,
+     transform 2000ms ease-in-out;
+}
+
+.zoom-in.appear {
+    transform: scale(1);
+    opacity: 1;
+    transition: opacity 1000ms ease-in-out,
+     transform 2000ms ease-in-out;
+}
+
+.slide-out {
+    transform: translateX(50%);
+    opacity: 0;
+    transition: opacity 1000ms ease-in-out,
+     transform 2000ms ease-in-out;
+}
+
+.slide-out.appear {
+    transform: translateX(0);
+    opacity: 1;
+    transition: opacity 1000ms ease-in-out,
+     transform 2000ms ease-in-out;
+}
+
+.jump-in {
+    transform: translateY(50%);
+    opacity: 0;
+    transition: opacity 1000ms ease-in-out,
+     transform 2000ms ease-in-out;
+}
+
+.jump-in.appear {
+    transform: translateX(0);
+    opacity: 1;
+    transition: opacity 1000ms ease-in-out,
+     transform 2000ms ease-in-out;
+}
+
+/* aside */
+.divider {
+    opacity: 20%;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.line-below {
+    background-color: #2563EB;
+    height: 1px;
+    z-index: 999999999;
+    width: 100%;
+    display: none;
+}
+
+.link-list {
+    cursor: pointer;
+}
+
+.link-list1:hover .line-below1,
+.link-list2:hover .line-below2,
+.link-list3:hover .line-below3,
+.link-list4:hover .line-below4 {
+    display: block;
+}
+
+.menu-list {
+    top: 0;
+    right: 0;
+    z-index: 9999999;
+    background-color: #252540;
+    width: 0;
+    position: fixed;
+    height: 100vh;
+    transform: translateX(100vw);
+    transition: 0.8s ease-out;
+}
+
+.menu-active {
+    transform: translateX(0);
+    width: 100vw;
+}
+
+.ri-close-fill {
+    top: 3%;
+    right: 8%;
+}
+
+/* header */
+.save70-box {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #4B5563;
+    border-radius: 30px;
+    height: 30px;
+}
+
+.save70 {
+    background-color: #fff;
+    color: #A8ABCA;
+    border-radius: 30px;
+    width: max-content;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: .1em;
+    padding-bottom: .1em;
+    font-size: .75em;
+}
+
+.save70side {
+    font-size: .75em;
+}
+
+.header-descr {
+    width: 90vw;
+}
+
+.header-title {
+    font-size: 2em;
+    line-height: 1.2;
+    width: 90vw;
+    margin-left: auto;
+    margin-top: 1em;
+}
+
+.header-text {
+    font-size: .75em;
+    opacity: .8;
+    width: 90vw;
+    margin-left: auto;
+}
+
+.header-img {
+    height: 300px;
+    width: 100%;
+}
+
+.c-btn1 {
+    background-color: #2563EB;
+}
+
+.ri-arrow-right-s-fill {
+    color: #2563EB;
+}
+
+.icon1-box {
+    background-color: #fff;
+    padding: .6em;
+    padding-top: .3em;
+    padding-bottom: .3em;
+    border-radius: 50%;
+}
+
+/* stat */
+
+.stat-text {
+    font-size: .7em;
+    opacity: .7;
+}
+
+.icon2 {
+    background-color: #4B5563;
+    border-radius: 50%;
+    height: 4em;
+    width: 4em;
+}
+
+.icon2 i {
+    color: #0000FF;
+    font-size: 1.3em;
+}
+
+.country {
+    height: 2.6em;
+    width: 2.6em;
+}
+
+.icon21 {
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
+
+/* whyChoose */
+
+
+.whyChoose-img {
+    width: 100vw;
+}
+
+.title {
+    line-height: 1;
+    width: 90vw;
+}
+
+.text {
+    width: 90vw;
+
+}
+
+/* hash rate */
+
+.hash-rate-title,
+.hash-rate-text {
+    width: 90vw;
+    text-align: center;
+}
+
+.hash-rate-text {
+    font-size: .8em;
+    opacity: .5;
+}
+
+.hash-rate-box {
+    border-radius: 20px;
+    width: 90vw;
+}
+
+.hashrate-fig {
+    font-weight: 2000;
+}
+
+.hashrate-inputs input {
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.hashrate-inputs input::placeholder {
+    color: #000;
+    font-size: 1.2em;
+    font-weight: bold;
+    opacity: .6;
+}
+
+.hashrate-inputs select {
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.hashrate-est {
+    color: #3B82F6;
+}
+
+.hashrate-fig span {
+    color: #3B82F6;
+}
+
+.hashrate-text {
+    font-size: .8em;
+    opacity: .5;
+}
+
+/* start mining */
+
+.startMining {
+    background-color: #F8F9FA;
+    margin-top: -5em;
+    z-index: -1;
+    color: black;
+    padding: 4em;
+    padding-top: 12em;
+}
+
+.startMining-title {
+    width: 90vw;
+    text-align: center;
+}
+
+.cryptoText {
+    font-size: 1em;
+}
+
+.crypto-box {
+    background-color: #fff;
+    border-radius: 20px;
+    width: 90vw;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #2B076E;
+    color: #fff;
+    transition: 300ms linear;
+}
+
+.btn-sM2,
+.btn-sM3 {
+    opacity: 0;
+    display: none;
+    transition: opacity 20ms linear;
+}
+
+.btn50-2,
+.btn50-3 {
+    display: block;
+}
+
+.cryp-sym {
+    opacity: .5;
+}
+
+.cryptoName {
+    align-items: center;
+}
+
+.btn50-1 {
+    opacity: 0;
+    display: none;
+    transition: opacity 2000ms linear;
+}
+
+.btn50 {
+    border-radius: 50%;
+    height: 4em;
+    width: 4em;
+    color: #3B82F6;
+    background-color: #fff;
+    border: 2px solid gray;
+    z-index: 999;
+}
+
+.btn-sM {
+    z-index: 999;
+}
+
+.btn-sM:hover {
+    background-color: rgb(66, 138, 255);
+}
+
+.arrow {
+    font-size: xx-large;
+    margin-bottom: 1em;
+}
+
+/* sentiment */
+.sentiment {
+    z-index: 9999;
+    background-color: #0D0D2B;
+}
+
+.all-descr .text{
+    font-size: .8em;
+    opacity: .5;
+}
+
+.sentiment-title {
+    line-height: 1;
+}
+
+/* newsletter */
+.spacer {
+    height: 50px;
+    z-index: 999;
+    background-color: #0D0D2B;
+    width: 100vw;
+}
+.newsletter {
+    background-color: #3671E9;
+    border-radius: 20px;
+    z-index: -999;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.new-descr {
+    font-size: .7em;
+}
+
+
+.send {
+    border-radius: 20px;
+    height: 40px;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.news-input {
+    background-color: inherit;
+    border-bottom: 1px solid #fff;
+}
+
+.news-input::placeholder {
+    color: #fff;
+}
+
+.news-cryp-icon {
+    font-size: 20em;
+    opacity: .07;
+}
+
+.fa-bitcoin-sign {
+    bottom: -20%;
+    right: 2%;
+    rotate: 15deg;
+    font-size: 10em;
+    display: none;
+}
+
+.fa-ethereum {
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: 20%;
+}
+
+
+/* footer */
+.footer {
+    z-index: 9999;
+    background-color: #0D0D2B;
+}
+
+.socials {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.social:hover,
+.quick-link:hover {
+    color: #2563EB;
+}
+
+@media screen and (min-width: 768px) {
+.header-descr {
+    width: 65vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.save70-box {
+    width: 40vw;
+    margin-right: 25vw;
+}
+
+.header-title {
+    width: 65vw;
+}
+
+.header-text {
+    width: 65vw;
+}
+
+.header-img {
+    width: 150% !important;
+}
+}
+
+@media screen and (min-width: 1024px) {
+    .save70-box {
+        width: 40vw;
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    .header-title {
+        font-size: 3em;
+        line-height: 1;
+        width: 40vw;
+    }
+
+    .header-text {
+        font-size: .8em;
+        opacity: .8;
+        width: 40vw;
+    }
+
+    .header-descr {
+        width: 465.688px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .save70-box {
+        width: 300px;
+        background-color: #4B5563;
+        border-radius: 30px;
+        height: 30px;
+    }
+
+
+    .header-img {
+        height: 480px;
+        width: 465.688px;
+        margin-right: 100px;
+    }
+
+    .stat-text {
+        font-size: .8em;
+        width: max-content;
+    }
+
+    .icon2 {
+        background-color: #4B5563;
+        border-radius: 50%;
+        height: 3em;
+        width: 3em;
+    }
+
+    .whyChoose-img {
+        width: 50%;
+    }
+    
+
+    .title {
+        line-height: 1;
+        width: 30vw;
+    }
+
+    .text {
+        width: fit-content;
+    }
+
+    .hash-rate-box {
+        width: 70vw;
+    }
+
+    .sentiment-title {
+        width: 50vw;
+        line-height: 1;
+    }
+
+    .all-descr {
+        width: 40vw;
+    }
+
+    .senti-img {
+        width: 45vw;
+    }
+
+    .news-input {
+        width: 30vw;
+    }
+
+    .news-cryp-icon {
+        font-size: 15em;
+        opacity: .07;
+    }
+    
+    .news-title-descr {
+        width: 35%;
+    }
+
+    .fa-bitcoin-sign {
+        bottom: -20%;
+        right: 2%;
+        rotate: 15deg;
+        font-size: 10em;
+        display: block;
+    }
+
+    .crypto-box {
+        background-color: #fff;
+        border-radius: 20px;
+        width: 320px;
+    }
+
+    .active {
+        background-color: #2B076E;
+        color: #fff;
+    }
+    
+    .fa-ethereum {
+        top: -20%;
+        left: 2%;
+        margin-left: 0;
+        right: 0;
+    }
+
+    .hashrate-inputs input {
+        width: 50%;
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+    }
+    
+    .hashrate-inputs input::placeholder {
+        color: #000;
+        font-size: 1.2em;
+        font-weight: bold;
+        opacity: .6;
+    }
+    
+    .hashrate-inputs select {
+        width: 20%;
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+    }
+}

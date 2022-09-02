@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crappo Challenge</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia|Roboto|Merienda|Kenia|Oxygen|BungeeInline|Montserrat|Gotham|Space+Grotesk|Open+Sans|Lato|Oxanium">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- tailwind -->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <!--Favicon-->
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Remix icons-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Bootstrap css-->
+    
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- Swiper.js styles -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <!--custom styles-->
+    <link rel="stylesheet" href="./main.css">
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.9.3/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.9.3/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.9.3/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.9.3/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.9.3/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.9.3/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.9.3/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.9.3/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.9.3/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.9.3/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+    
+  </head>
+  <body>
+    
+    <aside class="aside lg:pt-5 flex flex-row justify-between items-center lg:pl-20 lg:pr-20">
+      <div class="aside-title-logo p-4 lg:p-0">
+        <img src="./main logo.svg" alt="" class="logo">
+      </div>
+
+      <nav class="menu-lg lg:flex flex-row hidden items-center">
+        <ul class="link-list flex flex-row gap-8 mr-12">
+          <li class="link-list link-list1 flex flex-col items-center justify-center"><span>Product</span><div class="line-below line-below1"></div></li>
+          <li class="link-list link-list2 flex flex-col items-center justify-center"><span>Features</span><div class="line-below line-below2"></div></li>
+          <li class="link-list link-list3 flex flex-col items-center justify-center"><span>About</span><div class="line-below line-below3"></div></li>
+          <li class="link-list link-list4 flex flex-col items-center justify-center"><span>Contact</span><div class="line-below line-below4"></div></li>
+        </ul>
+
+        <div class="logInReg flex flex-row items-center gap-6 ml-2">
+          <div class="login link-list">Login</div>
+          <div class="divider">
+            |
+          </div>
+          <button class="c-btn">Register</button>
+        </div>
+      </nav>
+
+      <div class="menu-sm lg:hidden flex flex-col relative">
+        <i class="ri-menu-fill menu text-3xl p-4 lg:p-0" id="menu-open"></i>
+
+        <div class="menu-list absolute" id="menu-list">
+          <i class="ri-close-fill text-3xl absolute right-0" id="menu-close"></i>
+
+          <ul class="link-list2 flex flex-col text-center pt-32">
+            <li class="link-list mb-6 text-2xl">Products</li>
+            <li class="link-list mb-6 text-2xl">Features</li>
+            <li class="link-list mb-6 text-2xl">About</li>
+            <li class="link-list mb-6 text-2xl">Contact</li>
+          </ul>
+  
+          <div class="logInReg text-2xl text-center flex flex-rowc items-center justify-center">
+            <div class="login link-list mr-5">Login</div>
+            <div class="divider mr-5">
+              |
+            </div>
+            <button class="c-btn">Register</button>
+          </div>
+        </div>
+        
+      </div>
+    </aside>
+
+
+    <header class="header lg:pl-20 lg:pr-20 md:pl-40 md:pr-40 pt-10 lg:flex-row flex flex-col items-center justify-between">
+
+      <div class="header-descr lg:mb-10">
+        <div class="save70-box flex items-center flex-row lg:mb-10">
+          <div class="save70 flex items-center ml-1 zoom-in">70% SAVE</div>
+          <div class="save70side ml-6 flex items-center ml-1">for the best black friday deals</div>
+        </div>
+
+        <div class=" slide-up">
+          <div class="header-title text-bolder">
+            Fastest & Secure Platform To Invest In Cypto
+          </div>
+  
+          <div class="header-text pt-1 pb-6">
+            buy and sell cyptocurrencies by trusted 10M wallets, in over 100m transactions
+          </div>
+        </div>
+        
+
+        <button class="c-btn c-btn1 flex flex-row items-center justify-around zoom-in">
+          <span>Try For FREE</span>
+          <span class="icon1-box flex items-center justify-center ml-3 slide-in-f"><i class="ri-arrow-right-s-fill"></i></span>
+        </button>
+      </div>
+
+
+      <img src="./image 1.png" alt="" class="header-img zoom-in">
+    </header>
+
+    <!-- stat -->
+
+    <section class="stat flex lg:flex-row flex-col justify-between items-center mt-20 lg:pl-20 lg:pr-20 pl-10 pr-10">
+      <div class="stat1 mb-8 slide-up flex flex-row items-center">
+        <span class="icon2 flex items-center justify-center mr-6 icon21"><i class="ri-bar-chart-fill"></i></span>
+        <div class="stat-note">
+          <div class="stat-title text-2xl text-bold">
+            $30B
+          </div>
+          <div class="stat-text">
+            Digital Currency Exchange
+          </div>
+        </div>
+      </div>
+
+      <div class="stat2 mb-8 slide-up flex flex-row items-center">
+        <span class="icon2 flex items-center justify-center mr-6"><img src="./Capture-removebg-preview.png" alt="" class="country"></span>
+        <div class="stat-note">
+          <div class="stat-title text-2xl text-bold">
+            190+
+          </div>
+          <div class="stat-text">
+            Countries Around The World
+          </div>
+        </div>
+      </div>
+
+      <div class="stat3 mb-8 slide-up flex flex-row items-center">
+        <span class="icon2 flex items-center justify-center mr-6"><i class="fa-solid fa-user"></i></span>
+        <div class="stat-note">
+          <div class="stat-title text-2xl text-bold">
+            $10M
+          </div>
+          <div class="stat-text"> 
+            Trusted Wallet Investors
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- why choose -->
+
+    <section class="whyChoose mt-12 lg:mt-0 lg:pl-20 lg:pr-20 pl-10 pr-10 lg:flex-row flex flex-col-reverse items-center justify-between">
+
+      <img src="./image 2.png" alt="" class="whyChoose-img zoom-in">
+
+      <div class="whyChoose-descr slide-up">
+
+        <div class="title text-4xl lg:text-left text-center lg:text-4xl">why you should choose CHAPPO</div>
+        <div class="text text-1xl lg:text-left text-center opacity-50 mt-6 mb-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, laboriosam? Lorem ipsum dolor sit amet consectetur adipisicing elit. In, praesentium.</div>
+        <button class="c-btn">learn more</button>
+      </div>
+    </section>
+
+    <!-- hash rate -->
+
+    <section class="hash-rate lg:pl-20 lg:pr-20 pl-10 pr-10 flex items-center flex-col mt-20">
+      <div class="hash-rate-title text-2xl text-bolder lg:text-left text-center slide-up">
+        How Much Can You Earn With Us
+      </div>
+
+      <div class="hash-rate-text mt-6 mb-6 lg:text-left text-center slide-up">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, id similique temporibus dignissimos tempore odio?
+      </div>
+
+      <div class="hash-rate-box lg:p-12 p-12 pr-4 pl-4 bg-white text-black lg:p-12 zoom-in">
+        <div class="hashrate-inputs mb-12 lg:mb-0 flex flex-col lg:flex-row lg:justify-between">
+          <input type="text" name="" id="" class=" mb-10 lg:mb-0" placeholder="Enter your hash rate">
+
+          <select name="hashes" id="hashes" class=" mb-10 lg:mb-0 p-3"> 
+            <option value="TH/s">TH/s</option>
+            <option value="H/s">H/s</option>
+            <option value="KH/s">KH/s</option>
+            <option value="MH/s">MH/s</option>
+            <option value="GH/s">GH/s</option>
+          </select>
+
+          <button class="c-btn">Calculate</button>
+        </div>
+
+        <div class="hashrate-descr items-left">
+
+          <div class="hashrate-est text-1xl mt-12 mb-6">ESTIMATED 24 HOUR REVENUE:</div>
+          <div class="hashrate-fig text-3xl text-bolder mb-6">0.055 130 59 ETH <span>($1275)</span></div>
+          <div class="hashrate-text">Revenue will change based on mining difficulty and Ethereum price.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- start mining -->
+
+    <section class="startMining flex flex-col items-center">
+
+      <div class="startMining-title text-2xl mb-12 text-bolder zoom-in">
+        Trade Securely And Market The High Growth Cryptocurrencies.
+      </div>
+
+      <div class="crypto-boxes flex flex-col lg:flex-row lg:justify-between text-center">
+
+        <div class="btc-box crypto-box active mb-8 lg:mb-0 lg:mr-12  flex flex-col items-center">
+          <img src="./bitcoin.png" alt="" class="sM-img mb-12 mt-12">
+          <div class="cryptoName flex flex-row mb-6"><span class="mr-3 text-bolder text-3xl">Bitcoin</span><span class="cryp-sym text-1xl">BTC</span></div>
+          <div class="cryptoText mb-6">Digital currency in which a record of transactions is maintained.</div>
+          <button class="c-btn flex flex-row items-center mb-12 pt-12 pb-12 btn-sM btn-sM1 text-2xl"><span class="mr-3">Start mining</span><i class="ri-arrow-right-s-line"></i></button>
+          <button class="flex items-center lg:items-center mb-6 btn50  justify-center btn50-1"><i class="ri-arrow-drop-right-line arrow"></i></button>
+        </div>
+
+        <div class="eth-box crypto-box mb-8 lg:mb-0 lg:mr-12 flex flex-col items-center">
+          <img src="./eth.png" alt="" class="sM-img mb-12 mt-12">
+          <div class="cryptoName flex flex-row mb-6"><span class="mr-3 text-bolder text-3xl">Ethereum</span><span class="cryp-sym text-1xl">ETH</span></div>
+          <div class="cryptoText mb-6">Blockchain technology to create and run decentralized digital applications.</div>
+          <button class="c-btn flex flex-row items-center mb-12 pt-12 pb-12 btn-sM btn-sM2 text-2xl"><span class="mr-3">Start mining</span><i class="ri-arrow-right-s-line"></i></button>
+          <button class="flex items-center lg:items-center mb-6 btn50  justify-center btn50-2"><i class="ri-arrow-drop-right-line arrow"></i></button>
+        </div>
+
+        <div class="ltc-box crypto-box mb-8 lg:mb-0 flex flex-col items-center">
+          <img src="./ltc.png" alt="" class="sM-img mb-12 mt-12">
+          <div class="cryptoName flex flex-row mb-6"><span class="mr-3 text-bolder text-3xl">Litecoin</span><span class="cryp-sym text-1xl">LTC</span></div>
+          <div class="cryptoText mb-6">Cryptocurrency that enables instant payments to anyone in the world.</div>
+          <button class="c-btn flex flex-row items-center mb-12 pt-12 pb-12 btn-sM btn-sM3 text-2xl"><span class="mr-3">Start mining</span><i class="ri-arrow-right-s-line"></i></button>
+          <button class="flex items-center lg:items-center mb-6 btn50  justify-center btn50-3"><i class="ri-arrow-drop-right-line arrow"></i></button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- market sentiment -->
+
+    <section class="sentiment lg:pl-20 lg:pr-20 pl-10 pr-10 flex flex-col items-center justify-between">
+      <div class="sentiment-title text-center pt-6 pb-6 lg:text-3xl text-2xl zoom-in">
+        Market Sentiments, Portfolio, And Run The Infrastructure Of Your Choice
+      </div>
+
+      <div class="invSmart-descrip-img mb-20 flex lg:flex-row flex-col pt-12">
+
+        <div class="invSmart-descr all-descr mb-6 mt-3">
+          <div class="senti-inner-title text-bolder text-2xl mb-6">Invest Smart</div>
+          <div class="senti-inner-text mb-6">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur rem ducimus vitae maiores dolorum alias.</div>
+          <button class="c-btn zoom-in">learn more</button>
+        </div>
+
+        <img src="./image 3.png" alt="" class="invSmart-img senti-img zoom-in">
+      </div>
+
+      <div class="Detailed-descrip-img items-center mb-20 flex lg:flex-row flex-col-reverse">
+
+        <img src="./image 4.png" alt="" class="Detailed-img senti-img lg:mr-20 zoom-in">
+
+        <div class="Detailed-descr all-descr mb-6 mt-3">
+          <div class="senti-inner-title text-bolder text-2xl mb-6">Detailed Statistics</div>
+          <div class="senti-inner-text mb-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero deserunt commodi quos adipisci! Corporis, vero?</div>
+          <button class="c-btn slide-out">learn more</button>
+
+        </div>
+      </div>
+
+      <div class="Track-descrip-img items-center mb-20 flex lg:flex-row flex-col">
+
+        <div class="Track-descr all-descr mb-6 mt-3">
+          <div class="senti-inner-title text-bolder text-2xl mb-6">Grow Your Profit And Track Your Investments</div>
+          <div class="senti-inner-text mb-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit enim odit distinctio dolore id incidunt?</div>
+          <button class="c-btn zoom-in">learn more</button>
+
+        </div>
+
+        <img src="./image 5.png" alt="" class="Track-img senti-img zoom-in">
+      </div>
+    </section>
+
+    <!-- newsletter -->
+    <section class="zoom-in">
+      <div class="spacer"></div>
+        <div class="newsletter lg:pl-20 lg:pr-20 pl-10 pr-10 p-16 pt-10 pb-10 lg:pt-20 lg:pb-20 flex lg:flex-row flex-col justify-between relative">
+          <i class="fa-solid fa-bitcoin-sign absolute text-white news-cryp-icon"></i>
+          <i class="fa-brands fa-ethereum absolute text-white news-cryp-icon"></i>
+
+          <div class="news-title-descr">
+            <div class="news-title text-2xl text-bolder">Start Mining Now</div>
+            <div class="new-descr">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste, ipsum. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, saepe.</div>
+          </div>
+
+          <div class="news-input-send flex lg:flex-row flex-col items-center">
+            <input type="text" name="news-input" id="news-input" class="news-input mt-6 mb-12 lg:mt-0 lg:mb-0" placeholder="enter message">
+            <input type="submit" value="Subscribe" class="send bg-white text-black">
+          </div>
+        </div>
+      <div class="spacer"></div>
+    </section>
+
+
+    <footer class="footer lg:pl-20 lg:pr-20 pl-10 pr-10 pt-20 flex lg:flex-col lg:text-left text-center flex-col  justify-between">
+
+      <div class="footer1 flex lg:flex-row flex-col lg:items-start items-center justify-between">
+        <div class="aside-title-logo mb-8 lg:mb-0">
+          <img src="./main logo.svg" alt="" class="logo">
+        </div>
+
+        <ul class="quick-links mb-8 lg:mb-0">
+
+          <div class="div quick-link-head mb-6 text-bold">Quick Links</div>
+          <li class="quick-link text-1xl mb-4">Home</li>
+          <li class="quick-link text-1xl mb-4">Products</li>
+          <li class="quick-link text-1xl mb-4">About</li>
+          <li class="quick-link text-1xl mb-4">Features</li>
+          <li class="quick-link text-1xl mb-4">Contact</li>
+        </ul>
+
+        <ul class="quick-links mb-8 lg:mb-0">
+
+          <div class="div quick-link-head mb-6 text-bold">Resources Links</div>
+          <li class="quick-link text-1xl mb-4">Download Whitepapper</li>
+          <li class="quick-link text-1xl mb-4">Smart Token</li>
+          <li class="quick-link text-1xl mb-4">Blockchain Explore</li>
+          <li class="quick-link text-1xl mb-4">Crypto API</li>
+          <li class="quick-link text-1xl mb-4">Interest</li>
+        </ul>
+
+        <div class="cards">
+          <div class="cards-header text-1xl mb-8 lg:mb-6 text-bold">We accept following payment systems</div>
+
+          <div class="cards-type flex lg:flex-row flex-row  mb-8 lg:mb-0">
+            <div class="card"><img src="./visa.png" alt="" class="card-img pr-3 lg:mr-4"></div>
+            <div class="card"><img src="./mastercard.png" alt="" class="card-img pr-3 lg:mr-4"></div>
+            <div class="card"><img src="./bitcoin2.png" alt="" class="card-img pr-3"></div>
+          </div>
+          
+        </div>
+
+      </div>
+
+      <div class="footer2 flex lg:flex-row flex-col items-center justify-between mb-12">
+        <div class="copywrite text-1xl">© 2022 CRAPPO. All rights reserved.</div>
+
+        <ul class="socials flex mt-6 lg:mt-0 lg:flex-row items-center justify-center">
+          <li class="social"><i class="text-2xl mr-8 ri-youtube-fill"></i></li>
+          <li class="social"><i class="text-2xl mr-8 ri-whatsapp-fill"></i></li>
+          <li class="social"><i class="text-2xl mr-8 ri-instagram-line"></i></li>
+          <li class="social"><i class="text-2xl mr-8 ri-twitter-fill"></i></li>
+          <li class="social"><i class="text-2xl ri-linkedin-box-fill"></i></li>
+        </ul>
+      </div>
+    </footer>
+
+     <!--swiper.js-->
+     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+     <!--bootstap js  -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+ 
+     <!--custom script-->
+     <script src="./script.js"></script>
+  </body>
+</html>
